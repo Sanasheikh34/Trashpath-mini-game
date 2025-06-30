@@ -28,7 +28,8 @@ Memorize a glowing tile path across 3 increasingly difficult levels — and win 
 ##  Run Locally
 
 1. Clone the repo  
-2. Install dependencies:
+2. Install dependencies: npm run dev
+
 
 ```bash
 npm install
