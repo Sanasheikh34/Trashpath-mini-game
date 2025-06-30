@@ -12,8 +12,8 @@ Memorize a glowing tile path across 3 increasingly difficult levels — and win 
 
 - The game has 3 levels:
    - Level 1 = 3 tiles
-   - Level 2 = 5 tiles
-   - Level 3 = 7 tiles
+   - Level 2 = 3 tiles
+   - Level 3 = 5 tiles
 - You must repeat the tile sequence in order — without any hints.
 - If you complete all 3 levels, you receive a token reward (on testnet).
 - Demo mode works without a wallet; Backpack is needed to receive tokens.
