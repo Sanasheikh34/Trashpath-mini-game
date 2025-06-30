@@ -1,18 +1,17 @@
 # Trashpath-mini-game
 Created a mini game 'Trashpath' which is live on Gorbagana testnet
 
-# 🧠 TrashPath
+# TrashPath
 
 TrashPath is a 5x5 memory-based mini-game built on the Solana-based Gorbagana testnet.  
 It challenges players to memorize a random tile sequence and retrace it — test your brain, degen-style.
 
-## 🔗 Live Demo
+##  Live Demo
 
 👉 Play here: [https://trashpath-mini-game.vercel.app](https://trashpath-mini-game.vercel.app)
 
-## 🎮 How It Works
 
-## 🎮 How It Works
+##  How It Works
 
 - The game has 3 levels:  
    - Level 1: 3 tiles  
@@ -25,14 +24,14 @@ It challenges players to memorize a random tile sequence and retrace it — test
 - You can play in demo mode (no wallet required), or connect Backpack to qualify for rewards.
 
 
-## 🧪 Gorbagana Integration
+##  Gorbagana Integration
 
 - Built on Gorbagana testnet
 - Designed for fast on-chain games with instant feedback
 - Backpack wallet supported (via wallet adapter)
 - Native test token reward mechanism included (code-ready)
 
-## 💻 How to Run Locally
+##  How to Run Locally
 
 1. Clone this repo  
 2. Install dependencies:
