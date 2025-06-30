@@ -1,19 +1,27 @@
-// TrashPath: Three-Level Memory Game with Token Reward After All Levels
+// TrashPath with Reward Transfer (Gorbagana RPC + Token Transfer)
 
 import { useEffect, useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { Connection, PublicKey, Transaction, SystemProgram } from '@solana/web3.js';
 
 const GRID_SIZE = 5;
 const LEVELS = [3, 5, 7]; // sequence lengths per level
+const GORBAGANA_RPC = 'https://rpc.gorbagana.wtf';
+const connection = new Connection(GORBAGANA_RPC);
+
+// Replace with your Gorbagana test wallet public key to receive the tokens
+const RECEIVER_WALLET = new PublicKey('9SxrsyQZtbDQQkMTRsNR38BhQ84N1ZgLaMGEejcPZhLu');
 
 function TrashPath() {
-  const [level, setLevel] = useState(0); // 0, 1, 2 for 3 levels
+  const [level, setLevel] = useState(0);
   const [sequence, setSequence] = useState([]);
   const [playerPath, setPlayerPath] = useState([]);
-  const [phase, setPhase] = useState('start'); // start | show | play | done
+  const [phase, setPhase] = useState('start');
   const [activeIndex, setActiveIndex] = useState(null);
   const [result, setResult] = useState(null);
   const [completed, setCompleted] = useState(false);
+  const { publicKey, sendTransaction } = useWallet();
 
   const startLevel = () => {
     if (level >= LEVELS.length) return;
@@ -53,8 +61,8 @@ function TrashPath() {
           }, 1500);
         } else {
           setCompleted(true);
-          setResult('🏆 All Levels Completed! You win tokens!');
-          // Call a function to send tokens here if wallet connected
+          setResult('🏆 All Levels Completed! Sending reward…');
+          if (publicKey) handleRewardTransfer();
         }
       } else {
         setResult(`❌ Level ${level + 1} failed. Try again.`);
@@ -63,6 +71,23 @@ function TrashPath() {
           setPhase('start');
         }, 2000);
       }
+    }
+  };
+
+  const handleRewardTransfer = async () => {
+    try {
+      const tx = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: publicKey,
+          toPubkey: RECEIVER_WALLET,
+          lamports: 10000 // 0.00001 SOL on Gorbagana
+        })
+      );
+      await sendTransaction(tx, connection);
+      setResult('✅ Reward sent on Gorbagana!');
+    } catch (err) {
+      console.error(err);
+      setResult('⚠️ Transaction failed.');
     }
   };
 
