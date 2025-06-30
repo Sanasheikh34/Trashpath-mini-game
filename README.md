@@ -1,37 +1,35 @@
 # Trashpath-mini-game
 
+TrashPath is a 5x5 memory-based puzzle game built on the Solana-based Gorbagana testnet.  
+Memorize a glowing tile path across 3 increasingly difficult levels — and win testnet tokens if you complete them all!
 
-TrashPath is a 5x5 memory-based mini-game built on the Solana-based Gorbagana testnet.  
-It challenges players to memorize a random tile sequence and retrace it — test your brain, degen-style.
+## Live Demo
 
-##  Live Demo
-
- Play here: [https://trashpath-mini-game.vercel.app](https://trashpath-mini-game.vercel.app)
-
+ Play now: https://trashpath-mini-game.vercel.app  
+ Source code: https://github.com/Sanasheikh34/Trashpath-mini-game
 
 ##  How It Works
 
-- The game has 3 levels:  
-   - Level 1: 3 tiles  
-   - Level 2: 5 tiles  
-   - Level 3: 7 tiles  
-- In each level, you'll see a glowing tile sequence.  
-- Memorize it and click the tiles in the same order.  
-- Pass all 3 levels correctly to win.  
-- Only if you beat all 3 levels will you become eligible for testnet token rewards.  
-- You can play in demo mode (no wallet required), or connect Backpack to qualify for rewards.
-
+- The game has 3 levels:
+   - Level 1 = 3 tiles
+   - Level 2 = 5 tiles
+   - Level 3 = 7 tiles
+- You must repeat the tile sequence in order — without any hints.
+- If you complete all 3 levels, you receive a token reward (on testnet).
+- Demo mode works without a wallet; Backpack is needed to receive tokens.
 
 ##  Gorbagana Integration
 
-- Built on Gorbagana testnet
-- Designed for fast on-chain games with instant feedback
-- Backpack wallet supported (via wallet adapter)
-- Native test token reward mechanism included (code-ready)
+- RPC: https://rpc.gorbagana.wtf
+- Wallet: Backpack (via Solana Wallet Adapter)
+- Reward: Native SOL testnet transfer via SystemProgram.transfer()
+- Network: One-validator chain for low-latency
 
-##  How to Run Locally
+##  Run Locally
 
-1. Clone this repo  
+1. Clone the repo  
 2. Install dependencies:
-   ```bash
-   npm install
+
+```bash
+npm install
+
