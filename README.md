@@ -8,7 +8,7 @@ It challenges players to memorize a random tile sequence and retrace it — test
 
 ##  Live Demo
 
-👉 Play here: [https://trashpath-mini-game.vercel.app](https://trashpath-mini-game.vercel.app)
+ Play here: [https://trashpath-mini-game.vercel.app](https://trashpath-mini-game.vercel.app)
 
 
 ##  How It Works
