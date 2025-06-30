@@ -1,7 +1,5 @@
 # Trashpath-mini-game
-Created a mini game 'Trashpath' which is live on Gorbagana testnet
 
-# TrashPath
 
 TrashPath is a 5x5 memory-based mini-game built on the Solana-based Gorbagana testnet.  
 It challenges players to memorize a random tile sequence and retrace it — test your brain, degen-style.
